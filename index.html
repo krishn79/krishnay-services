@@ -3,176 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishnay Security & Services OPC Pvt Ltd | Multi-State Government Contractor</title>
+    <title>KRISHNAY SECURITY & SERVICES (OPC) PVT. LTD.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #002347; --secondary: #ffcc00; --accent: #28a745; --bg-light: #f4f7fa; --text-dark: #1a1a1a; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: var(--text-dark); line-height: 1.6; }
-        
-        /* Navigation */
-        .nav-bar { background: var(--primary); color: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-bottom: 3px solid var(--secondary); }
-        .nav-brand { font-size: 1.3rem; font-weight: 800; letter-spacing: 1px; }
-
-        /* Mega Hero Section */
-        header { 
-            background: linear-gradient(rgba(0,35,71,0.85), rgba(0,35,71,0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: white; padding: 150px 20px; text-align: center;
+        :root { 
+            --primary: #002347; 
+            --secondary: #ffcc00; 
+            --accent: #28a745; 
+            --white: #ffffff;
         }
-        .badge-top { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; margin-bottom: 25px; display: inline-block; box-shadow: 0 0 20px rgba(40,167,69,0.4); }
-        header h1 { font-size: 3.5rem; margin: 10px 0; line-height: 1.2; text-transform: uppercase; }
-        header p { font-size: 1.3rem; max-width: 900px; margin: 20px auto; opacity: 0.9; }
-        
-        /* Corporate Stats */
-        .stats-grid { background: white; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); padding: 50px 10%; gap: 30px; margin-top: -60px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-radius: 15px; width: 80%; margin-left: auto; margin-right: auto; position: relative; z-index: 2; border-bottom: 5px solid var(--primary); }
-        .stat-card { text-align: center; border-right: 1px solid #eee; }
-        .stat-card:last-child { border: none; }
-        .stat-card h3 { font-size: 2.5rem; color: var(--primary); margin: 0; }
-        .stat-card p { font-weight: bold; color: #666; margin-top: 5px; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; overflow-x: hidden; }
 
-        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; position: relative; display: inline-block; }
-        .section-title h2::after { content: ''; width: 100px; height: 5px; background: var(--secondary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        /* Top Bar with DPIIT Badge */
+        .top-nav {
+            background: var(--primary);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .dpiit-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-        /* Services Grid */
-        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .service-box { background: var(--bg-light); padding: 50px 30px; border-radius: 20px; border: 1px solid #e1e8ef; transition: 0.5s; cursor: pointer; position: relative; overflow: hidden; }
-        .service-box:hover { background: var(--primary); color: white; transform: translateY(-15px); }
-        .service-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
-        .service-box:hover i { color: var(--secondary); transform: scale(1.1); }
-        .service-box h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        /* Hero Section */
+        header { 
+            background: linear-gradient(rgba(0,35,71,0.7), rgba(0,35,71,0.7)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; 
+            background-position: center; 
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
 
-        /* Floating Contact */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); text-decoration: none; }
+        /* Logo & Company Name Branding */
+        .branding-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        /* Yahan aapka Image wala KS Logo aayega */
+        .main-logo {
+            font-size: 100px;
+            color: var(--secondary);
+            font-family: 'Serif', cursive;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+        .company-full-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 800px;
+            border-top: 2px solid var(--secondary);
+            padding-top: 10px;
+        }
 
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 8% auto; padding: 50px; width: 90%; max-width: 700px; border-radius: 25px; border-top: 10px solid var(--secondary); animation: zoomIn 0.3s; position: relative; }
-        @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-        .close { position: absolute; right: 30px; top: 20px; font-size: 35px; cursor: pointer; color: #999; }
+        /* Excellence Text */
+        .excellence-text {
+            margin-top: 40px;
+        }
+        .excellence-text h2 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .excellence-text h2 span {
+            color: var(--secondary);
+        }
+        .excellence-sub {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 20px auto;
+            font-weight: 300;
+        }
 
-        footer { background: #0a0a0a; color: white; padding: 80px 20px; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; max-width: 1200px; margin: auto; }
-        .footer-grid a { color: #ccc; text-decoration: none; transition: 0.3s; }
-        .footer-grid a:hover { color: var(--secondary); }
-        
-        .btn { padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-gold { background: var(--secondary); color: var(--primary); }
+        /* Talk to Director Button */
+        .btn-director {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn-director:hover {
+            background: white;
+            transform: scale(1.05);
+        }
 
-        @media (max-width: 768px) { header h1 { font-size: 2.2rem; } .stats-grid { grid-template-columns: 1fr 1fr; width: 95%; } }
+        /* Services Grid (Brief) */
+        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            margin-top: -100px;
+        }
+        .s-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            transition: 0.3s;
+        }
+        .s-card:hover { transform: translateY(-10px); }
+        .s-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        footer { background: #0a0a0a; color: white; padding: 40px 20px; text-align: center; font-size: 0.9rem; }
+        footer a { color: var(--secondary); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/917974724199" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/917974724199" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<nav class="nav-bar">
-    <div class="nav-brand">KRISHNAY SECURITY & SERVICES</div>
-    <div style="font-size: 0.8rem; border: 1px solid var(--secondary); padding: 5px 10px;">REGD: U78300MP2025OPC079755</div>
-</nav>
-
-<header>
-    <div class="badge-top">✓ DPIIT STARTUP INDIA RECOGNIZED</div>
-    <h1>Excellence in <br><span style="color: var(--secondary);">Global Infrastructure</span></h1>
-    <p>A leading Multi-State Government Contractor & Multi-Service Provider. Delivering high-impact solutions across India with unmatched integrity and precision.</p>
-    <div style="margin-top: 40px;">
-        <a href="tel:7974724199" class="btn btn-gold">Inquiry & Collaboration</a>
-    </div>
-</header>
-
-<div class="stats-grid">
-    <div class="stat-card"><h3>10+</h3><p>NATIONAL PROJECTS</p></div>
-    <div class="stat-card"><h3>50+</h3><p>TRAINED PROFESSIONALS</p></div>
-    <div class="stat-card"><h3>PAN-INDIA</h3><p>SERVICE COVERAGE</p></div>
-    <div class="stat-card"><h3>24/7</h3><p>CORPORATE SUPPORT</p></div>
-</div>
-
-<div class="container">
-    <div class="section-title">
-        <h2>Our Core Service Verticals</h2>
-        <p>Providing specialized services for State and Central Government Tenders.</p>
+    <div class="top-nav">
+        <div class="dpiit-badge">
+            <i class="fas fa-check-circle"></i> DPIIT STARTUP INDIA RECOGNIZED
+        </div>
     </div>
 
-    <div class="services-container">
-        <div class="service-box" onclick="openModal('ads')">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Advertisement & Branding</h3>
-            <p>Pan-India awareness campaigns, wall painting, and high-visibility branding solutions.</p>
+    <header>
+        <div class="branding-container">
+            <div class="main-logo">KS</div>
+            <div class="company-full-name">
+                KRISHNAY SECURITY & SERVICES (OPC) PVT. LTD.
+            </div>
         </div>
-        <div class="service-box" onclick="openModal('vehicle')">
-            <i class="fas fa-shuttle-van"></i>
-            <h3>Vehicle Hiring</h3>
-            <p>Commercial fleet management and vehicle rental services for government logistics.</p>
+
+        <div class="excellence-text">
+            <h2>Excellence In <br><span>Global Infrastructure</span></h2>
+            <p class="excellence-sub">A leading Multi-State Government Contractor & Multi-Service Provider, delivering high-impact precision and integrity across India.</p>
         </div>
-        <div class="service-box" onclick="openModal('civil')">
-            <i class="fas fa-building"></i>
-            <h3>Infrastructure</h3>
-            <p>Civil construction, road development, and complex structural maintenance.</p>
-        </div>
-        <div class="service-box" onclick="openModal('manpower')">
-            <i class="fas fa-user-check"></i>
-            <h3>Manpower Supply</h3>
-            <p>Skilled, unskilled, and specialized personnel supply for all sectors.</p>
-        </div>
-        <div class="service-box" onclick="openModal('supply')">
-            <i class="fas fa-truck-moving"></i>
-            <h3>Strategic Procurement</h3>
-            <p>Material supply and asset procurement through GeM and e-Procurement portals.</p>
-        </div>
-        <div class="service-box" onclick="openModal('amc')">
-            <i class="fas fa-tools"></i>
-            <h3>Maintenance & AMC</h3>
-            <p>Comprehensive Annual Maintenance Contracts for national government assets.</p>
+
+        <a href="tel:7974724199" class="btn-director">Talk to Director</a>
+    </header>
+
+    <div class="container">
+        <div class="services-grid">
+            <div class="s-card">
+                <i class="fas fa-building"></i>
+                <h3>Infrastructure</h3>
+                <p>National Scale Civil & Road Works</p>
+            </div>
+            <div class="s-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Branding</h3>
+                <p>Pan-India Advertisement Solutions</p>
+            </div>
+            <div class="s-card">
+                <i class="fas fa-shuttle-van"></i>
+                <h3>Logistics</h3>
+                <p>Government Vehicle Hiring Fleet</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="serviceModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div id="modalBody"></div>
-    </div>
-</div>
-
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h3 style="color: var(--secondary);">KRISHNAY GROUP</h3>
-            <p>Authorized Pan-India Government Contractor focused on delivering excellence at scale.</p>
-            <p><strong>GST:</strong> 23AAMCK2910Q1Z8</p>
-        </div>
-        <div>
-            <h3 style="color: var(--secondary);">Corporate Contact</h3>
-            <p>Email: <a href="mailto:krishnampvtltd799@gmail.com?subject=Business Inquiry">krishnampvtltd799@gmail.com</a></p>
-            <p>Call: <a href="tel:7974724199">7974724199</a>, <a href="tel:9893591481">9893591481</a></p>
-        </div>
-        <div>
-            <h3 style="color: var(--secondary);">Headquarters</h3>
-            <p><a href="https://www.google.com/maps/search/?api=1&query=Gopal+Das+Road+Sidhi+Madhya+Pradesh+486661" target="_blank">C/O Ram Gopal Viswakarma, Gopal Das Road,<br>Sidhi, Madhya Pradesh, 486661</a></p>
-        </div>
-    </div>
-    <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
-    <p>&copy; 2026 Krishnay Security & Services OPC Pvt Ltd. | Serving India with Excellence</p>
-</footer>
-
-<script>
-    const data = {
-        ads: { t: "Advertisement & Branding Solutions", w: "Strategic awareness campaigns, wall paintings, digital marketing, and government branding on a national scale.", b: "We offer the fastest advertisement execution across multiple states with high-quality visibility." },
-        vehicle: { t: "Vehicle Hiring & Logistics", w: "Providing maintained commercial fleets and SUV rentals for State and Central government departments.", b: "Ensuring 100% vehicle uptime and professional drivers for seamless logistics." },
-        civil: { t: "Civil Infrastructure & Construction", w: "Building roads, bridges, and providing structural maintenance for various government bhawans.", b: "Utilization of advanced engineering techniques and high-grade materials for long-lasting results." },
-        manpower: { t: "Strategic Manpower Staffing", w: "Supplying vetted security, administrative, and technical professionals for public sector requirements.", b: "Rigorous background checks and industry-standard training for every deployed staff member." },
-        supply: { t: "GeM & Strategic Procurement", w: "Bulk supply of office furniture, industrial tools, and essential raw materials.", b: "Optimized procurement through GeM portal with transparent pricing and timely delivery." },
-        amc: { t: "Asset Maintenance & AMC", w: "Handling annual maintenance for government buildings, electrical systems, and machinery.", b: "Preventive maintenance schedules and rapid-response repair teams." }
-    };
-    function openModal(s) {
-        const sD = data[s];
-        document.getElementById('modalBody').innerHTML = `<h2 style="color:var(--primary);">${sD.t}</h2><p><strong>Project Overview:</strong><br>${sD.w}</p><p><strong>Why Krishnay is the Best Choice:</strong><br>${sD.b}</p><br><a href="tel:7974724199" class="btn btn-gold">Call Now</a>`;
-        document.getElementById('serviceModal').style.display = "block";
-    }
-    function closeModal() { document.getElementById('serviceModal').style.display = "none"; }
-    window.onclick = function(e) { if(e.target == document.getElementById('serviceModal')) closeModal(); }
-</script>
+    <footer>
+        <p>© 2026 KRISHNAY SECURITY & SERVICES (OPC) PVT. LTD.</p>
+        <p>Contact: <a href="tel:7974724199">7974724199</a> | Email: <a href="mailto:krishnampvtltd799@gmail.com">krishnampvtltd799@gmail.com</a></p>
+        <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px;">REGD: U78300MP2025OPC079755 | GST: 23AAMCK2910Q1Z8</p>
+    </footer>
 
 </body>
 </html>

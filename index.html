@@ -3,146 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishnay Security & Services OPC Pvt Ltd</title>
+    <title>Krishnay Security & Services OPC Pvt Ltd | Government Contractor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #002e5b; --secondary: #ffcc00; --accent: #28a745; --light: #f8f9fa; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: #333; }
+        :root { --primary: #002347; --secondary: #ffcc00; --accent: #28a745; --bg-light: #f4f7fa; --text-dark: #1a1a1a; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: var(--text-dark); line-height: 1.6; }
         
-        .nav-bar { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        
-        header { background: linear-gradient(rgba(0,46,91,0.85), rgba(0,46,91,0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; padding: 80px 20px; text-align: center; }
-        
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        
-        section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); border-left: 6px solid var(--secondary); padding-left: 15px; }
+        /* Navigation */
+        .nav-bar { background: var(--primary); color: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-bottom: 3px solid var(--secondary); }
+        .nav-brand { font-size: 1.3rem; font-weight: 800; letter-spacing: 1px; }
 
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #eee; padding: 25px; border-radius: 12px; transition: 0.3s; background: #fff; cursor: pointer; text-align: center; }
-        .card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .card h3 { margin: 10px 0; font-size: 1.2rem; }
-        .view-btn { color: var(--primary); font-weight: bold; font-size: 0.9rem; text-decoration: underline; }
-
-        /* Modal (Popup) Styling */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; }
-        .modal-content { background: white; margin: 5% auto; padding: 30px; width: 80%; max-width: 700px; border-radius: 15px; position: relative; animation: slideIn 0.3s; }
-        @keyframes slideIn { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
-        .close { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; color: #666; }
-        .modal h3 { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
-        .modal ul { line-height: 1.8; }
-
-        .btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px; }
-        .btn-primary { background: var(--secondary); color: var(--primary); }
+        /* Mega Hero Section */
+        header { 
+            background: linear-gradient(rgba(0,35,71,0.85), rgba(0,35,71,0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: white; padding: 150px 20px; text-align: center;
+        }
+        .badge-top { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; margin-bottom: 25px; display: inline-block; box-shadow: 0 0 20px rgba(40,167,69,0.4); }
+        header h1 { font-size: 3.5rem; margin: 10px 0; line-height: 1.2; text-transform: uppercase; }
+        header p { font-size: 1.3rem; max-width: 900px; margin: 20px auto; opacity: 0.9; }
         
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+        /* Corporate Stats */
+        .stats-grid { background: white; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); padding: 50px 10%; gap: 30px; margin-top: -60px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-radius: 15px; width: 80%; margin-left: auto; margin-right: auto; position: relative; z-index: 2; border-bottom: 5px solid var(--primary); }
+        .stat-card { text-align: center; border-right: 1px solid #eee; }
+        .stat-card:last-child { border: none; }
+        .stat-card h3 { font-size: 2.5rem; color: var(--primary); margin: 0; }
+        .stat-card p { font-weight: bold; color: #666; margin-top: 5px; }
 
-        footer { background: #111; color: #999; text-align: center; padding: 40px; }
+        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; width: 100px; height: 5px; background: var(--secondary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* Services Grid - Heavy Layout */
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-box { background: var(--bg-light); padding: 50px 30px; border-radius: 20px; border: 1px solid #e1e8ef; transition: 0.5s; cursor: pointer; position: relative; overflow: hidden; }
+        .service-box:hover { background: var(--primary); color: white; transform: translateY(-15px); }
+        .service-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
+        .service-box:hover i { color: var(--secondary); transform: scale(1.1); }
+        .service-box h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .service-box p { font-size: 1rem; opacity: 0.8; }
+
+        /* New Commercial Sections */
+        .info-strip { background: #f9f9f9; padding: 100px 0; margin: 50px 0; }
+        .flex-row { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
+        .flex-col { flex: 1; min-width: 300px; }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { margin-bottom: 15px; font-weight: 600; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .check-list i { color: var(--accent); font-size: 1.3rem; }
+
+        /* Floating Contact */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); text-decoration: none; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
+        .modal-content { background: white; margin: 8% auto; padding: 50px; width: 90%; max-width: 700px; border-radius: 25px; border-top: 10px solid var(--secondary); animation: zoomIn 0.3s; }
+        @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+        .close { position: absolute; right: 30px; top: 20px; font-size: 35px; cursor: pointer; color: #999; }
+
+        footer { background: #0a0a0a; color: white; padding: 80px 20px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; max-width: 1200px; margin: auto; }
+        
+        .btn { padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-gold { background: var(--secondary); color: var(--primary); }
+        .btn-gold:hover { background: white; color: var(--primary); box-shadow: 0 5px 20px rgba(255,204,0,0.4); }
+
+        @media (max-width: 768px) { header h1 { font-size: 2.2rem; } .stats-grid { grid-template-columns: 1fr 1fr; width: 95%; } }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/917974724199" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/917974724199" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
-<div class="nav-bar">
-    <div class="nav-brand">KRISHNAY SECURITY & SERVICES</div>
-    <div style="font-size: 0.8rem;">GST: 23AAMCK2910Q1Z8</div>
-</div>
+<nav class="nav-bar">
+    <div class="nav-brand">KRISHNAY SECURITY & SERVICES OPC PVT LTD</div>
+    <div style="font-size: 0.8rem; border: 1px solid var(--secondary); padding: 5px 10px;">REGD: U78300MP2025OPC079755</div>
+</nav>
 
 <header>
-    <div style="background:var(--accent); padding:5px 15px; border-radius:20px; display:inline-block; font-size:0.8rem; margin-bottom:10px;">✓ Startup India Registered</div>
-    <h1>Krishnay Security & Services</h1>
-    <p>Professional Govt Contractor & Multi-Service Provider</p>
-    <a href="tel:7974724199" class="btn btn-primary">📞 Contact Now</a>
+    <div class="badge-top">✓ DPIIT STARTUP INDIA RECOGNIZED</div>
+    <h1>Building a Stronger <br><span style="color: var(--secondary);">Infrastructure</span></h1>
+    <p>Premium Government Contractor & Multi-Service Provider. Delivering Excellence in Civil Works, Manpower, Logistics, and Branding Solutions across India.</p>
+    <div style="margin-top: 40px;">
+        <a href="tel:7974724199" class="btn btn-gold">Connect With Director</a>
+    </div>
 </header>
 
+<div class="stats-grid">
+    <div class="stat-card"><h3>10+</h3><p>PROJECTS DONE</p></div>
+    <div class="stat-card"><h3>50+</h3><p>PROFESSIONAL STAFF</p></div>
+    <div class="stat-card"><h3>100%</h3><p>GOVT COMPLIANT</p></div>
+    <div class="stat-card"><h3>24/7</h3><p>ACTIVE SUPPORT</p></div>
+</div>
+
 <div class="container">
-    <section>
-        <h2>Our Specialized Services</h2>
-        <p style="margin-bottom: 20px; color: #666;">Har service par click karein poori jaankari ke liye:</p>
-        <div class="services-grid">
-            <div class="card" onclick="openModal('civil')">
-                <i class="fas fa-hard-hat"></i>
-                <h3>Civil Construction</h3>
-                <span class="view-btn">Read More</span>
+    <div class="section-title">
+        <h2>Our Business Verticals</h2>
+        <p>Click on any service to view detailed capability statement.</p>
+    </div>
+
+    <div class="services-container">
+        <div class="service-box" onclick="openModal('vehicle')">
+            <i class="fas fa-car-side"></i>
+            <h3>Vehicle Hiring</h3>
+            <p>Commercial fleet & administrative vehicle hiring for government departments.</p>
+        </div>
+        <div class="service-box" onclick="openModal('ads')">
+            <i class="fas fa-ad"></i>
+            <h3>Advertisement</h3>
+            <p>Full-scale branding, wall painting, and government awareness campaigns.</p>
+        </div>
+        <div class="service-box" onclick="openModal('civil')">
+            <i class="fas fa-monument"></i>
+            <h3>Infrastructure</h3>
+            <p>Specialized in road construction, building maintenance, and civil tenders.</p>
+        </div>
+        <div class="service-box" onclick="openModal('manpower')">
+            <i class="fas fa-user-tie"></i>
+            <h3>Manpower Supply</h3>
+            <p>Skilled, Unskilled & Professional staffing for public/private sectors.</p>
+        </div>
+        <div class="service-box" onclick="openModal('supply')">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>GeM Supply</h3>
+            <p>Material procurement & office furniture supply via GeM & e-Procurement.</p>
+        </div>
+        <div class="service-box" onclick="openModal('amc')">
+            <i class="fas fa-tools"></i>
+            <h3>AMC & Repair</h3>
+            <p>Expert maintenance contracts for machines and government assets.</p>
+        </div>
+    </div>
+</div>
+
+<div class="info-strip">
+    <div class="container">
+        <div class="flex-row">
+            <div class="flex-col">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);" alt="Contractor">
             </div>
-            <div class="card" onclick="openModal('manpower')">
-                <i class="fas fa-users"></i>
-                <h3>Manpower Supply</h3>
-                <span class="view-btn">Read More</span>
-            </div>
-            <div class="card" onclick="openModal('supply')">
-                <i class="fas fa-box-open"></i>
-                <h3>Material Supply</h3>
-                <span class="view-btn">Read More</span>
-            </div>
-            <div class="card" onclick="openModal('amc')">
-                <i class="fas fa-tools"></i>
-                <h3>Repair & AMC</h3>
-                <span class="view-btn">Read More</span>
+            <div class="flex-col">
+                <h2>Why Choose Krishnay?</h2>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Authorized GeM Seller & e-Procurement Expert</li>
+                    <li><i class="fas fa-check-circle"></i> Timely Project Completion Guarantee</li>
+                    <li><i class="fas fa-check-circle"></i> High-Quality Raw Material Standards</li>
+                    <li><i class="fas fa-check-circle"></i> Pan-India Logistic & Advertising Coverage</li>
+                </ul>
+                <a href="mailto:krishnampvtltd799@gmail.com" class="btn btn-gold" style="margin-top: 20px;">Request a Quote</a>
             </div>
         </div>
-    </section>
+    </div>
 </div>
 
 <div id="serviceModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <div id="modalBody">
-            </div>
+        <div id="modalBody"></div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Krishnay Security & Services OPC Pvt Ltd. <br> Sidhi, Madhya Pradesh.</p>
+    <div class="footer-grid">
+        <div>
+            <h3 style="color: var(--secondary);">KRISHNAY GROUP</h3>
+            <p>Registered One Person Company (OPC) dedicated to public service and infrastructure development.</p>
+            <p><strong>GST:</strong> 23AAMCK2910Q1Z8</p>
+        </div>
+        <div>
+            <h3 style="color: var(--secondary);">Quick Links</h3>
+            <p>Email: krishnampvtltd799@gmail.com</p>
+            <p>Call: 7974724199, 9893591481</p>
+        </div>
+        <div>
+            <h3 style="color: var(--secondary);">Head Office</h3>
+            <p>C/O Ram Gopal Viswakarma, Gopal Das Road,<br>Sidhi, Madhya Pradesh, 486661</p>
+        </div>
+    </div>
+    <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
+    <p>&copy; 2026 Krishnay Security & Services OPC Pvt Ltd. | Powered by Innovation</p>
 </footer>
 
 <script>
-    const serviceData = {
-        civil: {
-            title: "Civil Construction & Infrastructure",
-            work: "Hum road building, sarkari bhawan ki marammat, aur naye infrastructure projects ka kaam karte hain.",
-            best: "Hamari company best materials aur modern engineering techniques ka use karti hai taaki har project sadiyon tak tikau rahe."
-        },
-        manpower: {
-            title: "Manpower & Recruitment",
-            work: "Skilled labor, security guards aur professional staff ki bharti aur supply ka kaam.",
-            best: "Hum har worker ka background check aur training karte hain, taaki aapko sabse bharosemand team mile."
-        },
-        supply: {
-            title: "Material & Equipment Supply",
-            work: "Sarkari koshishon ke liye office furniture, stationery, aur raw materials ka supply.",
-            best: "GeM portal ke madhyam se hum transparency aur market se kam daam par best quality material provide karte hain."
-        },
-        amc: {
-            title: "Repairing & AMC (Annual Maintenance)",
-            work: "Sarkari machines, buildings aur assets ki salana dekh-rekh aur marammat.",
-            best: "Hamari team 24/7 support ke liye ready rehti hai taaki maintenance mein koi deri na ho."
-        }
+    const data = {
+        vehicle: { t: "Vehicle Hiring Services", w: "Hum govt. departments ko cars, SUVs, aur commercial trucks rent par provide karte hain (Monthly/Tender basis).", b: "Hamara fleet hamesha maintained rehta hai aur hum trained drivers bhi provide karte hain." },
+        ads: { t: "Advertisement & Branding", w: "Public awareness campaigns, Wall paintings, Digital ads, aur Govt. scheme promotions.", b: "Hum Sidhi aur aas-paas ke areas mein sabse fast advertisement execution karte hain." },
+        civil: { t: "Civil Infrastructure", w: "Road development, building civil works, aur drainage systems.", b: "Hum latest engineering software aur high-grade cement/steel ka use karte hain." },
+        manpower: { t: "Manpower Staffing", w: "Security personnel, office assistants, aur technical workers supply.", b: "Proper police verification aur background check ke baad hi deployment hoti hai." },
+        supply: { t: "GeM Strategic Supply", w: "Office stationery, furniture aur industrial tools.", b: "Transparent bidding aur GeM portal ke zariye direct supply capability." },
+        amc: { t: "Maintenance & AMC", w: "Building repairs aur machine annual maintenance.", b: "Breakdown hone se pehle preventitive maintenance hamari speciality hai." }
     };
-
-    function openModal(service) {
-        const data = serviceData[service];
-        document.getElementById('modalBody').innerHTML = `
-            <h3>${data.title}</h3>
-            <p><strong>Kya Kaam Hota Hai?</strong><br>${data.work}</p>
-            <p><strong>Hum Kyun Best Hain?</strong><br>${data.best}</p>
-            <a href="tel:7974724199" class="btn btn-primary">Enquire Now</a>
-        `;
+    function openModal(s) {
+        const sD = data[s];
+        document.getElementById('modalBody').innerHTML = `<h2 style="color:var(--primary);">${sD.t}</h2><p><strong>Work Overview:</strong><br>${sD.w}</p><p><strong>Why Krishnay is Best:</strong><br>${sD.b}</p><br><a href="tel:7974724199" class="btn btn-gold">Call Now</a>`;
         document.getElementById('serviceModal').style.display = "block";
     }
-
-    function closeModal() {
-        document.getElementById('serviceModal').style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('serviceModal')) {
-            closeModal();
-        }
-    }
+    function closeModal() { document.getElementById('serviceModal').style.display = "none"; }
+    window.onclick = function(e) { if(e.target == document.getElementById('serviceModal')) closeModal(); }
 </script>
 
 </body>

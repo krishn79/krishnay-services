@@ -1,75 +1,149 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krishnay Security & Services OPC Pvt Ltd</title>
-<style>
-body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; background-color: #f4f7f9; }
-header { background: #002e5b; color: white; padding: 50px 20px; text-align: center; border-bottom: 6px solid #ffcc00; }
-.nav-bar { background: #001f3d; color: white; padding: 12px; text-align: center; font-weight: bold; position: sticky; top: 0; z-index: 1000; }
-.container { max-width: 1000px; margin: auto; padding: 20px; }
-section { background: white; padding: 30px; margin-bottom: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-h2 { color: #002e5b; border-left: 6px solid #ffcc00; padding-left: 15px; text-transform: uppercase; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.service-card { background: #fff; border: 1px solid #e1e8ed; padding: 20px; border-radius: 8px; border-top: 3px solid #002e5b; }
-.info-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-.info-table td { padding: 10px; border-bottom: 1px solid #eee; }
-.info-table td:first-child { font-weight: bold; color: #002e5b; width: 35%; }
-.contact-info { background: #002e5b; color: white; padding: 30px; border-radius: 10px; }
-.contact-info a { color: #ffcc00; text-decoration: none; font-weight: bold; }
-.footer { text-align: center; padding: 30px; background: #111; color: #ccc; margin-top: 40px; }
-.badge { background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-bottom: 10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishnay Security & Services OPC Pvt Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #002e5b; --secondary: #ffcc00; --accent: #28a745; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: #333; }
+        
+        .nav-bar { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        
+        header { background: linear-gradient(rgba(0,46,91,0.85), rgba(0,46,91,0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; padding: 80px 20px; text-align: center; }
+        
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        
+        section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); border-left: 6px solid var(--secondary); padding-left: 15px; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #eee; padding: 25px; border-radius: 12px; transition: 0.3s; background: #fff; cursor: pointer; text-align: center; }
+        .card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; font-size: 1.2rem; }
+        .view-btn { color: var(--primary); font-weight: bold; font-size: 0.9rem; text-decoration: underline; }
+
+        /* Modal (Popup) Styling */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; }
+        .modal-content { background: white; margin: 5% auto; padding: 30px; width: 80%; max-width: 700px; border-radius: 15px; position: relative; animation: slideIn 0.3s; }
+        @keyframes slideIn { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+        .close { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; color: #666; }
+        .modal h3 { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
+        .modal ul { line-height: 1.8; }
+
+        .btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px; }
+        .btn-primary { background: var(--secondary); color: var(--primary); }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+
+        footer { background: #111; color: #999; text-align: center; padding: 40px; }
+    </style>
 </head>
 <body>
 
-<div class="nav-bar">KRISHNAY SECURITY & SERVICES OPC PVT LTD</div>
+<a href="https://wa.me/917974724199" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<div class="nav-bar">
+    <div class="nav-brand">KRISHNAY SECURITY & SERVICES</div>
+    <div style="font-size: 0.8rem;">GST: 23AAMCK2910Q1Z8</div>
+</div>
 
 <header>
-<div class="badge">Startup India Registered Entity</div>
-<h1>Krishnay Security & Services</h1>
-<p>Government Contractor & Multi-Service Provider</p>
+    <div style="background:var(--accent); padding:5px 15px; border-radius:20px; display:inline-block; font-size:0.8rem; margin-bottom:10px;">✓ Startup India Registered</div>
+    <h1>Krishnay Security & Services</h1>
+    <p>Professional Govt Contractor & Multi-Service Provider</p>
+    <a href="tel:7974724199" class="btn btn-primary">📞 Contact Now</a>
 </header>
 
 <div class="container">
-<section>
-<h2>Company Profile</h2>
-<p><strong>Krishnay Security & Services OPC Private Limited</strong> is a dedicated firm providing comprehensive solutions for Government Tenders and Private Contracts. We specialize in infrastructure development, resource management, and essential maintenance services.</p>
-<table class="info-table">
-<tr><td>Director</td><td>Krishn Kumar Vishwakarma</td></tr>
-<tr><td>CIN (Reg No.)</td><td>U78300MP2025OPC079755</td></tr>
-<tr><td>GST Number</td><td>23AAMCK2910Q1Z8</td></tr>
-<tr><td>Entity Type</td><td>One Person Company (OPC) Private Limited</td></tr>
-</table>
-</section>
+    <section>
+        <h2>Our Specialized Services</h2>
+        <p style="margin-bottom: 20px; color: #666;">Har service par click karein poori jaankari ke liye:</p>
+        <div class="services-grid">
+            <div class="card" onclick="openModal('civil')">
+                <i class="fas fa-hard-hat"></i>
+                <h3>Civil Construction</h3>
+                <span class="view-btn">Read More</span>
+            </div>
+            <div class="card" onclick="openModal('manpower')">
+                <i class="fas fa-users"></i>
+                <h3>Manpower Supply</h3>
+                <span class="view-btn">Read More</span>
+            </div>
+            <div class="card" onclick="openModal('supply')">
+                <i class="fas fa-box-open"></i>
+                <h3>Material Supply</h3>
+                <span class="view-btn">Read More</span>
+            </div>
+            <div class="card" onclick="openModal('amc')">
+                <i class="fas fa-tools"></i>
+                <h3>Repair & AMC</h3>
+                <span class="view-btn">Read More</span>
+            </div>
+        </div>
+    </section>
+</div>
 
-<section>
-    <h2>Our Services</h2>
-    <div class="services-grid">
-        <div class="service-card"><h3>🏗️ Construction</h3>Roads, Buildings & Infrastructure works.</div>
-        <div class="service-card"><h3>📦 Material Supply</h3>Raw materials & equipment procurement.</div>
-        <div class="service-card"><h3>👥 Manpower</h3>Skilled & Unskilled staffing solutions.</div>
-        <div class="service-card"><h3>🛠️ Maintenance</h3>Repairing & AMC for government assets.</div>
-        <div class="service-card"><h3>🚗 Logistics</h3>Commercial vehicle hiring services.</div>
-        <div class="service-card"><h3>🛡️ Security</h3>Professional security & facility services.</div>
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalBody">
+            </div>
     </div>
-</section>
-
-<section class="contact-info">
-    <h2>Contact Us</h2>
-    <p><strong>📍 Registered Office:</strong><br>
-    C/O RAM GOPAL VISWAKARMA, GOPAL DAS ROAD, SIDHI, GOPADVANAS,<br>
-    MADHYA PRADESH, INDIA, 486661</p>
-    <p><strong>📞 Phone:</strong> <a href="tel:7974724199">7974724199</a>, <a href="tel:9893591481">9893591481</a></p>
-    <p><strong>✉️ Email:</strong> <a href="mailto:krishnampvtltd799@gmail.com">krishnampvtltd799@gmail.com</a></p>
-</section>
 </div>
 
-<div class="footer">
-<p>&copy; 2026 Krishnay Security & Services OPC Pvt Ltd. All Rights Reserved.</p>
-</div>
+<footer>
+    <p>&copy; 2026 Krishnay Security & Services OPC Pvt Ltd. <br> Sidhi, Madhya Pradesh.</p>
+</footer>
+
+<script>
+    const serviceData = {
+        civil: {
+            title: "Civil Construction & Infrastructure",
+            work: "Hum road building, sarkari bhawan ki marammat, aur naye infrastructure projects ka kaam karte hain.",
+            best: "Hamari company best materials aur modern engineering techniques ka use karti hai taaki har project sadiyon tak tikau rahe."
+        },
+        manpower: {
+            title: "Manpower & Recruitment",
+            work: "Skilled labor, security guards aur professional staff ki bharti aur supply ka kaam.",
+            best: "Hum har worker ka background check aur training karte hain, taaki aapko sabse bharosemand team mile."
+        },
+        supply: {
+            title: "Material & Equipment Supply",
+            work: "Sarkari koshishon ke liye office furniture, stationery, aur raw materials ka supply.",
+            best: "GeM portal ke madhyam se hum transparency aur market se kam daam par best quality material provide karte hain."
+        },
+        amc: {
+            title: "Repairing & AMC (Annual Maintenance)",
+            work: "Sarkari machines, buildings aur assets ki salana dekh-rekh aur marammat.",
+            best: "Hamari team 24/7 support ke liye ready rehti hai taaki maintenance mein koi deri na ho."
+        }
+    };
+
+    function openModal(service) {
+        const data = serviceData[service];
+        document.getElementById('modalBody').innerHTML = `
+            <h3>${data.title}</h3>
+            <p><strong>Kya Kaam Hota Hai?</strong><br>${data.work}</p>
+            <p><strong>Hum Kyun Best Hain?</strong><br>${data.best}</p>
+            <a href="tel:7974724199" class="btn btn-primary">Enquire Now</a>
+        `;
+        document.getElementById('serviceModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('serviceModal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('serviceModal')) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>
